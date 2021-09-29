@@ -1,0 +1,24 @@
+apiVersion: isindir.github.com/v1alpha2
+kind: SopsSecret
+metadata:
+    name: ci-cd-github-oauth
+spec:
+    secretTemplates:
+    -   name: ENC[AES256_GCM,data:lPn3hbSAlr3fB8+gxOIPKNij,iv:/yXA97kDY8hbKZ4V9qR5She9jBPArQgw57YGtcEiK8Q=,tag:jkEex1K3M1byKo2Dx9tF5Q==,type:str]
+        data:
+            user: ENC[AES256_GCM,data:eWZjt6QKyu1HRCY=,iv:IhclBZ7SNvXrO3WHlF/CNJj/qdvGq7bW6wgWCuzEC48=,tag:D/8x9fOcRuujceU9JaDf5Q==,type:str]
+            token: ENC[AES256_GCM,data:mj0ehpew8+HhzCUPs23viz94VvPeyZ+tXb5VpBH4z9FdUDEXMwBP9A==,iv:gc5f9GfyVHI5Ys1+0pz1tzVsGbalbetzKP/xVynKvmE=,tag:uSjfDFeTwvApAexjJAncJw==,type:str]
+sops:
+    kms:
+    -   arn: arn:aws:kms:us-east-2:851992239907:alias/sops-key
+        created_at: '2021-04-27T22:38:25Z'
+        enc: AQICAHg6huW9Sz2Cbt3p1lQrbUULAdbYtLw4SeuUTJJqIJg1/gFLgMcNyh80yjxF0C9M7FudAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMGdlpwAfk7ji86g5xAgEQgDvD4iYvE4HWEuRzAH0Z4zDsVywfxHWsjQHFf+7Yx/PmxCmjbPXjWAp2OytaQ4Db1+Pe7GHJIM9x/j0s0A==
+        aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    lastmodified: '2021-04-27T22:38:25Z'
+    mac: ENC[AES256_GCM,data:v+cRb74S/AuhUtknhu9pK7PW+vC+A/eFR/nJnpkkAdyvVfGKptmvZN3fzmORC72LfHFMoYbzFdeSZ6le3+/7QCcSF18UIRdK6d/NOTbe2EqmKAnnhNmJiFYUILKn5t21gAfIy/pHTPxX2O/SJl00vjbcfuUrZDtDTMJ/DL8qLGU=,iv:JfLQkAlP5uOu9Ogm+hhgQaPfPjqXlRtp9vCjC7C5M30=,tag:JpdNEvLgQLSOYiNINPZaZA==,type:str]
+    pgp: []
+    encrypted_suffix: Templates
+    version: 3.6.1

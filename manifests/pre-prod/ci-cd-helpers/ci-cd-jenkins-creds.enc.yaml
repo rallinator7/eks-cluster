@@ -1,0 +1,24 @@
+apiVersion: isindir.github.com/v1alpha2
+kind: SopsSecret
+metadata:
+    name: ci-cd-jenkins-creds
+spec:
+    secretTemplates:
+    -   name: ENC[AES256_GCM,data:IJTeggcX9x8N3k2J2v0O/2SHrw==,iv:VihXKejkjSxYgA8OVV2OCCrFfZCq5GG7kjyqouKBK7Y=,tag:CQNmspJAcmN1PTEO0ueWMg==,type:str]
+        data:
+            username: ENC[AES256_GCM,data:qrLA2WhMuZ8UdKk=,iv:m71MGu/7d+ZC6MNQi9+5kqtzXiD1PMOVs79+/Pd2L6o=,tag:6DFspImA0y0bOMjmpiygNQ==,type:str]
+            password: ENC[AES256_GCM,data:cPl/qSgdzhw=,iv:IrqGYGwSazUpNrn1ZDP3h73puvpmzFMFPG3riVCEUCw=,tag:PytfU3Ruelf03H/FUoUSQA==,type:str]
+sops:
+    kms:
+    -   arn: arn:aws:kms:us-east-2:851992239907:alias/sops-key
+        created_at: '2021-04-24T21:36:50Z'
+        enc: AQICAHg6huW9Sz2Cbt3p1lQrbUULAdbYtLw4SeuUTJJqIJg1/gF7dh3zz8LaWZNza3JIr14vAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM79Za/9ygYOh3eX6eAgEQgDtclKOO/ytaA6aRne+Qrxk2v5M8XsseTbxeRT9Vi7VBMWq+F7qGYnrDU7x8ipbC4s1BjlbKZz0txIA2jg==
+        aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    lastmodified: '2021-04-24T21:36:50Z'
+    mac: ENC[AES256_GCM,data:06tsfUI5FiOC9BwisSjyxoJ8sd72eYxe1hO4YADLgsTYqaOqcHh4PRmhhObmH1qAMG2HzsA4D7+zy5/+smQIbSezl5VkQIyGggorBCEnUbyl65qDvl7vBDeC4Xe5C0J/pFgmOJP0aUpFTM2oP/Io7h/y0q5qCRLTUhYfDv+9MAM=,iv:k3i/LxHcr/UQgERPmLw6ew8+CRObZNYpP0CB2yPCKPw=,tag:vks2qUqZjRx76LTPBXWt4Q==,type:str]
+    pgp: []
+    encrypted_suffix: Templates
+    version: 3.6.1

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+ name: pull-image-secret-generator
+ annotations: 
+  eks.amazonaws.com/role-arn: arn:aws:iam::851992239907:role/pull-image-secret-generator
+ namespace: jenkins

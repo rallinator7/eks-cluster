@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: pull-image-secret-generator
+subjects:
+- kind: ServiceAccount
+  name: pull-image-secret-generator
+  namespace: jenkins
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: pull-image-secret-generator
+  apiGroup: rbac.authorization.k8s.io

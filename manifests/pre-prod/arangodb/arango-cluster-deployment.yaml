@@ -1,0 +1,21 @@
+apiVersion: "database.arangodb.com/v1alpha"
+kind: "ArangoDeployment"
+metadata:
+  name: beeze-arango
+  namespace: arangodb
+spec:
+  mode: Cluster
+  externalAccess:
+    type: None
+  tls:
+    caSecretName: None
+  agents:
+    storageClassName: agent-ebs
+    resources:
+          requests:
+            storage: 40Gi
+  dbservers:
+    storageClassName: dbserver-ebs
+    resources:
+          requests:
+            storage: 40Gi

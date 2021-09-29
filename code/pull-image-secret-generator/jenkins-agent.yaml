@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+spec:
+  serviceAccountName: pull-image-secret-generator
+  containers:
+  - name: aws-kube
+    image: rallinator7/aws-kube
+    command:
+    - cat
+    tty: true
+    env:
+    - name: SCM_VOLUME
+      value: "/tmp/scm"
+    resources:
+      limits: 
+        memory: "256Mi"
+        cpu: "100m"
+      requests:
+        memory: "256Mi"
+        cpu: "100m"
+  securityContext:
+    fsGroup: 65534

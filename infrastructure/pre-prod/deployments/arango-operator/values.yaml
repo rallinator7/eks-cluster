@@ -1,0 +1,45 @@
+---
+
+operator:
+  image: arangodb/kube-arangodb:1.1.6
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+
+  scope: legacy
+
+  args: []
+
+  service:
+    type: ClusterIP
+
+  annotations: {}
+
+  resources:
+    limits:
+      cpu: 1
+      memory: 256Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+
+  replicaCount: 1
+
+  updateStrategy:
+    type: Recreate
+
+  allowChaos: false
+
+  nodeSelector: {}
+
+  features:
+    deployment: true
+    deploymentReplications: true
+    storage: false
+    backup: false
+
+  images:
+    base: alpine:3.11
+    metricsExporter: arangodb/arangodb-exporter:0.1.7
+    arango: arangodb/arangodb:latest
+rbac:
+  enabled: true

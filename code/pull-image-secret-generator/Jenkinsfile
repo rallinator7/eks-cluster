@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        kubernetes {
+            yamlFile "./code/pull-image-secret-generator/jenkins-agent.yaml"
+            cloud 'kubernetes'
+        }     
+    }
+    triggers {
+        cron('0 */11 * * *')
+    }   
+    stages {
+        stage('Reset ECR-Login Secret') {
+            steps{
+                container('aws-kube'){
+
+                    echo "Deleting Old ECR Secret in Jenkins Namespace..."
+                    sh 'kubectl delete secret -n jenkins --ignore-not-found ecr-login'
+
+                    echo "Deleting Old ECR Secret in Jenkins Namespace..."
+                    sh 'kubectl delete secret -n e2e --ignore-not-found ecr-login'
+
+                    echo "Creating New ECR Secrets..."
+                    sh '''
+                    ECR_PASSWORD=$(aws ecr get-login-password --region us-east-2) && \
+                    kubectl create secret docker-registry ecr-login -n jenkins --docker-server=https://448290734884.dkr.ecr.us-east-2.amazonaws.com --docker-username=AWS --docker-password=$ECR_PASSWORD && \
+                    kubectl create secret docker-registry ecr-login -n e2e --docker-server=https://448290734884.dkr.ecr.us-east-2.amazonaws.com --docker-username=AWS --docker-password=$ECR_PASSWORD
+                    '''
+                }
+            }
+        }
+    }
+}

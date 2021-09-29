@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: beeze-arango-svc
+  namespace: arangodb
+spec:
+  selector:
+    arango_deployment: beeze-arango
+    role: coordinator
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8529
+    targetPort: 8529

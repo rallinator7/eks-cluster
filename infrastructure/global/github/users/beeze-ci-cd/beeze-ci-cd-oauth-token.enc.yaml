@@ -1,0 +1,15 @@
+token: ENC[AES256_GCM,data:wgD1uiVjNxjun5uUlsE1FlvBMJ+82hmkNBCCTI6UCgCc+iew2dUAQA==,iv:xdVXVIVKx+8jCoOvDjW5wDZw1fkW7mX2Bv9bTeeR6gQ=,tag:LFFl7VPMAyMzBkjhYZTXrQ==,type:str]
+sops:
+    kms:
+    -   arn: arn:aws:kms:us-east-2:851992239907:alias/sops-key
+        created_at: '2021-03-16T22:38:47Z'
+        enc: AQICAHg6huW9Sz2Cbt3p1lQrbUULAdbYtLw4SeuUTJJqIJg1/gEXpblABmA5bnXwB85YTzLQAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMaJHXHn8tyUNM7Xv/AgEQgDvynlcJFtjKnL3WUyIKUS5ezuughURbzYixCLURZAS7+kKKZV5C9RMMHS/Ad1RTrJdTEMTrJQNZRia2FA==
+        aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    lastmodified: '2021-03-16T22:38:48Z'
+    mac: ENC[AES256_GCM,data:NEqgSqbVVLq8J+OIGonCSPpr8HKf5uKmKZIzy6AAfTaCtBM0jjPopajp684iLShw1dDZp01ioqjp0uzsaHQABsbxtrOedP+1mJQnadjWCAM06C8uYSfBnFY0Aump/rgp5N9EFEnbwwbffg8h6QkdpiFHfP1Yl7uxNAdMVPboHXo=,iv:rqhqWY0sLj+T5xwa40O2sxhodSY2942I0vSQXTW8P/k=,tag:Vi4TN+SSNzVWyroDvUL9Ew==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.6.1
