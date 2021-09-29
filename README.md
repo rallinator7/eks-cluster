@@ -28,3 +28,4 @@ This is a list of known things that need to be worked on to make this a better g
 - [ ] Formulate a scaling plan for worker nodes
 - [ ] Remove opinionated helm chart deployments
 - [ ] Update Jenkins job for pullImageSecret to Kubernetes Job
+- [ ] Implement Prometheus/Grafana for metrics and logging
